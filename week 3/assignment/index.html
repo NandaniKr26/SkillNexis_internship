@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="weather-card">
+        <h1>Weather App</h1>
+
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+            <button onclick="getWeather()">Search</button>
+        </div>
+
+        <!-- Notification / Error Messages -->
+        <p id="error-message" class="error hidden"></p>
+
+        <!-- Weather Display Info -->
+        <div id="weather-info" class="weather-info hidden">
+            <h2 id="city-name">--</h2>
+            <div class="temp">
+                <span id="temperature">--</span>°C
+            </div>
+            <div class="condition">
+                <img id="weather-icon" src="" alt="Weather Icon" class="hidden">
+                <p id="description">--</p>
+            </div>
+            <div class="details">
+                <div class="detail-box">
+                    <p>Humidity</p>
+                    <p class="value" id="humidity">--%</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="note">Note: If no API key is provided, it uses mock data for common cities (e.g., London, Tokyo, New York).</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

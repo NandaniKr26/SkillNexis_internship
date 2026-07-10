@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 3 JS Practice</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; background: #f9fafb; padding: 2rem; color: #333; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 1rem; margin-bottom: 2rem; }
+        .practice-section { margin-bottom: 2.5rem; padding: 1.5rem; border: 1px solid #e0e0e0; border-radius: 6px; background: #fafafa; }
+        h2 { color: #2980b9; margin-top: 0; font-size: 1.3rem; }
+        button { background: #3498db; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; transition: background 0.3s; margin-top: 0.5rem; }
+        button:hover { background: #2980b9; }
+        input[type="number"], input[type="text"] { padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; margin-right: 0.5rem; }
+        .result { margin-top: 0.8rem; font-weight: bold; color: #27ae60; }
+
+        /* Calculator Specifics */
+        .calculator { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; max-width: 300px; margin-top: 1rem; }
+        .calc-display { grid-column: span 4; padding: 1rem; background: #222; color: #0f0; text-align: right; font-size: 1.2rem; border-radius: 4px; border: none; }
+        .calc-btn { background: #ecf0f1; color: #333; padding: 1rem; font-size: 1.1rem; }
+        .calc-btn.operator { background: #f39c12; color: white; }
+        .calc-btn.equals { background: #27ae60; color: white; grid-column: span 2; }
+        .calc-btn.clear { background: #e74c3c; color: white; grid-column: span 2; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Week 3: JavaScript Practice</h1>
+
+        <!-- Practice 4: Display today's date dynamically -->
+        <p style="text-align: right; font-style: italic;">Today's Date: <span id="current-date"></span></p>
+
+        <!-- Practice 1: Check even or odd numbers -->
+        <div class="practice-section">
+            <h2>1. Even or Odd Checker</h2>
+            <input type="number" id="num-input" placeholder="Enter a number">
+            <button onclick="checkEvenOdd()">Check</button>
+            <div id="even-odd-result" class="result"></div>
+        </div>
+
+        <!-- Practice 2: Button that changes color on click -->
+        <div class="practice-section">
+            <h2>2. Color Changing Button</h2>
+            <button id="color-btn">Click me to change color!</button>
+        </div>
+
+        <!-- Practice 3: Simple Calculator -->
+        <div class="practice-section">
+            <h2>3. Simple Calculator</h2>
+            <div class="calculator">
+                <input type="text" class="calc-display" id="calc-display" disabled>
+
+                <button class="calc-btn clear" onclick="clearCalc()">C</button>
+                <button class="calc-btn operator" onclick="appendCalc('/')">/</button>
+                <button class="calc-btn operator" onclick="appendCalc('*')">*</button>
+
+                <button class="calc-btn" onclick="appendCalc('7')">7</button>
+                <button class="calc-btn" onclick="appendCalc('8')">8</button>
+                <button class="calc-btn" onclick="appendCalc('9')">9</button>
+                <button class="calc-btn operator" onclick="appendCalc('-')">-</button>
+
+                <button class="calc-btn" onclick="appendCalc('4')">4</button>
+                <button class="calc-btn" onclick="appendCalc('5')">5</button>
+                <button class="calc-btn" onclick="appendCalc('6')">6</button>
+                <button class="calc-btn operator" onclick="appendCalc('+')">+</button>
+
+                <button class="calc-btn" onclick="appendCalc('1')">1</button>
+                <button class="calc-btn" onclick="appendCalc('2')">2</button>
+                <button class="calc-btn" onclick="appendCalc('3')">3</button>
+                <button class="calc-btn equals" onclick="calculate()">=</button>
+
+                <button class="calc-btn" onclick="appendCalc('0')" style="grid-column: span 2;">0</button>
+                <button class="calc-btn" onclick="appendCalc('.')">.</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Practice 4: Display today's date dynamically
+        document.getElementById('current-date').textContent = new Date().toDateString();
+
+        // Practice 1: Check even or odd numbers
+        function checkEvenOdd() {
+            const num = document.getElementById('num-input').value;
+            const resultDiv = document.getElementById('even-odd-result');
+
+            if (num === '') {
+                resultDiv.textContent = 'Please enter a number.';
+                resultDiv.style.color = 'red';
+                return;
+            }
+
+            if (num % 2 === 0) {
+                resultDiv.textContent = `${num} is an EVEN number.`;
+                resultDiv.style.color = '#27ae60';
+            } else {
+                resultDiv.textContent = `${num} is an ODD number.`;
+                resultDiv.style.color = '#e67e22';
+            }
+        }
+
+        // Practice 2: Button that changes color on click
+        const colorBtn = document.getElementById('color-btn');
+        colorBtn.addEventListener('click', function() {
+            // Generate random hex color
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            this.style.backgroundColor = randomColor;
+            this.textContent = `Color: ${randomColor}`;
+        });
+
+        // Practice 3: Simple Calculator
+        const calcDisplay = document.getElementById('calc-display');
+
+        function appendCalc(val) {
+            calcDisplay.value += val;
+        }
+
+        function clearCalc() {
+            calcDisplay.value = '';
+        }
+
+        function calculate() {
+            try {
+                // Using Function to safely evaluate simple math expressions instead of eval()
+                const result = new Function('return ' + calcDisplay.value)();
+                if(result === Infinity || isNaN(result)) {
+                    calcDisplay.value = 'Error';
+                } else {
+                    calcDisplay.value = result;
+                }
+            } catch (error) {
+                calcDisplay.value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
