@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 4 JS Advanced Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Week 4: Advanced JavaScript</h1>
+            <p>LocalStorage, API Fetch, Validation & ES6</p>
+        </header>
+
+        <main>
+            <!-- Task 1: LocalStorage -->
+            <section class="card">
+                <h2>1. LocalStorage Greeting</h2>
+                <div id="greeting-area">
+                    <p id="welcome-message">Hello, Guest!</p>
+                    <input type="text" id="name-input" placeholder="Enter your name">
+                    <button id="save-name-btn">Save Name</button>
+                    <button id="clear-name-btn" class="secondary">Clear</button>
+                </div>
+            </section>
+
+            <!-- Task 2: Form Validation -->
+            <section class="card">
+                <h2>2. Email Validation</h2>
+                <form id="email-form" novalidate>
+                    <div class="input-group">
+                        <input type="email" id="email-input" placeholder="example@email.com">
+                        <button type="submit">Validate</button>
+                    </div>
+                    <p id="email-error" class="error-msg hidden"></p>
+                    <p id="email-success" class="success-msg hidden"></p>
+                </form>
+            </section>
+
+            <!-- Task 3: API Fetch -->
+            <section class="card">
+                <h2>3. Random Quote API</h2>
+                <div class="quote-box">
+                    <p id="quote-text" class="quote">"Loading quote..."</p>
+                    <p id="quote-author" class="author">-</p>
+                </div>
+                <button id="fetch-quote-btn">Get New Quote</button>
+            </section>
+
+            <!-- Task 4: ES6 Array Filtering -->
+            <section class="card">
+                <h2>4. ES6 Array Filtering (> 50)</h2>
+                <p>Original Array: <span id="original-array">[12, 56, 34, 89, 21, 90, 45, 60]</span></p>
+                <button id="filter-btn">Filter Numbers</button>
+                <p class="result-text">Filtered Array: <span id="filtered-array"></span></p>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
