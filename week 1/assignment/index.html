@@ -4,52 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nandani Kumari - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header id="header">
-        <h1>Nandani Kumari</h1>
-        <p>Computer Engineering Student</p>
+        <div class="header-content">
+            <h1>Nandani Kumari</h1>
+            <p>Computer Engineering Student</p>
+        </div>
     </header>
 
     <nav>
         <a href="#about">About</a>
         <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#interests">Interests</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="container">
 
-        <section id="about">
+        <section id="about" class="fade-in">
             <h2>About Me</h2>
             <div class="profile">
                 <!-- Using a placeholder image since no specific image URL was provided -->
-                <img src="https://via.placeholder.com/160" alt="Nandani Kumari" class="profile-img">
+                <img src="https://via.placeholder.com/180" alt="Nandani Kumari" class="profile-img">
                 <div class="about-text">
-                    <p>Hello! I am Nandani Kumari, a passionate Computer Engineering student currently in my 4th year at Government Engineering College, Modasa. I have a strong foundation in computer science principles and a keen interest in software development. I am constantly eager to learn new technologies and apply my skills to build practical solutions.</p>
+                    <p>Hello! I am <strong>Nandani Kumari</strong>, a passionate Computer Engineering student currently in my 4th year at Government Engineering College, Modasa. I have a strong foundation in computer science principles and a keen interest in software development. I am constantly eager to learn new technologies and apply my skills to build practical solutions.</p>
                 </div>
             </div>
         </section>
 
-        <section id="education">
+        <section id="education" class="fade-in">
             <h2>Education</h2>
-            <div class="education-timeline">
-                <div class="education-item">
+            <div class="timeline">
+                <div class="timeline-item">
                     <h3>Bachelor of Engineering in Computer Engineering</h3>
                     <p class="institution">Government Engineering College, Modasa</p>
-                    <p>Currently in 4th Year</p>
+                    <p class="date">Currently in 4th Year</p>
                 </div>
-                <div class="education-item">
+                <div class="timeline-item">
                     <h3>Diploma in Computer Engineering</h3>
                     <p class="institution">Silver Oak University</p>
-                    <p>Completed 3-year diploma with a CGPA of 9.28</p>
+                    <p class="date">Completed 3-year diploma with a CGPA of 9.28</p>
                 </div>
             </div>
         </section>
 
-        <section id="skills">
+        <section id="experience" class="fade-in">
+            <h2>Internship Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Web Developer Intern</h3>
+                    <p class="institution">Aark Infosoft Pvt. Ltd</p>
+                    <p class="date">Dec 2023 – Apr 2024</p>
+                    <ul>
+                        <li>Developed and maintained diverse web application modules using HTML, CSS, JavaScript, PHP, and MySQL.</li>
+                        <li>Optimized UI/UX workflows and successfully resolved complex backend logic issues.</li>
+                        <li>Collaborated closely with senior developers to deliver both academic and enterprise-level modules.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Java Developer Intern</h3>
+                    <p class="institution">Aark Infosoft Pvt. Ltd</p>
+                    <p class="date">June 2023</p>
+                    <ul>
+                        <li>Gained hands-on experience with Java fundamentals, Object-Oriented Programming (OOP), and debugging techniques.</li>
+                        <li>Assisted in the rigorous testing and performance enhancement of Java-based applications.</li>
+                        <li>Worked on backend modules to improve system reliability.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="fade-in">
+            <h2>Key Projects</h2>
+            <div class="card">
+                <h3>Educonnect – Learning Management System</h3>
+                <p class="tech-stack"><strong>Tech Stack:</strong> HTML, CSS, Java, PHP, MySQL</p>
+                <ul>
+                    <li>Developed a comprehensive web-based learning platform connecting educators and students.</li>
+                    <li><strong>Teacher Module:</strong> Implemented functionality for teachers to create profiles, upload course materials, and manage content.</li>
+                    <li><strong>Student Module:</strong> Designed an enrollment system allowing students to browse courses, register, and access learning materials.</li>
+                    <li>Designed a relational database schema using MySQL to handle user data, course repositories, and enrollment records efficiently.</li>
+                    <li>Created a responsive user interface using HTML/CSS for seamless access across devices.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills" class="fade-in">
             <h2>Technical Skills</h2>
             <ul class="skills-list">
                 <li>C Lang</li>
@@ -59,14 +107,38 @@
                 <li>PHP</li>
                 <li>XAMPP</li>
                 <li>MySQL</li>
+                <li>Java</li>
             </ul>
         </section>
 
-        <section id="contact">
+        <section id="achievements" class="fade-in">
+            <h2>Achievements</h2>
+            <ul class="bullet-list">
+                <li>Secured <strong>710nd Rank</strong> in Gujarat DDCET (Diploma to Degree Common Entrance Test).</li>
+                <li>Achieved an outstanding <strong>9.28 CGPA</strong> during Diploma in Computer Engineering at Silver Oak University.</li>
+                <li>Successfully completed a <strong>5-month intensive Web Development internship</strong> contributing to live projects.</li>
+            </ul>
+        </section>
+
+        <section id="interests" class="fade-in">
+            <h2>Interests</h2>
+            <ul class="bullet-list">
+                <li><strong>Hobbies:</strong> Reading Novels, Traveling, Listening to Music.</li>
+                <li><strong>Professional:</strong> Exploring new Web Technologies and UI/UX Design trends.</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="fade-in">
             <h2>Contact Information</h2>
             <ul class="contact-info">
-                <li><strong>Phone:</strong> <a href="tel:+919173076639">+91 9173076639</a></li>
-                <li><strong>Email:</strong> <a href="mailto:karnnandani26@gmail.com">karnnandani26@gmail.com</a></li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <strong>Phone:</strong> <a href="tel:+919173076639">+91 9173076639</a>
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="contact-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <strong>Email:</strong> <a href="mailto:karnnandani26@gmail.com">karnnandani26@gmail.com</a>
+                </li>
             </ul>
         </section>
 
