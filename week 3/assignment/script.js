@@ -1,25 +1,4 @@
-// IMPORTANT: Replace with a real OpenWeatherMap API key if you want live data.
-// Leave blank to use the mock data fallback system.
-const API_KEY = '';
-
-// Fallback Mock Data in case API key is not provided or API fails
-const MOCK_DATA = {
-    'london': {
-        name: 'London',
-        main: { temp: 15, humidity: 72 },
-        weather: [{ description: 'light rain', icon: '10d' }]
-    },
-    'tokyo': {
-        name: 'Tokyo',
-        main: { temp: 22, humidity: 60 },
-        weather: [{ description: 'clear sky', icon: '01d' }]
-    },
-    'new york': {
-        name: 'New York',
-        main: { temp: 18, humidity: 55 },
-        weather: [{ description: 'scattered clouds', icon: '03d' }]
-    }
-};
+const API_KEY = '491c3fd4775e5673ad66325f9027dce4';
 
 const cityInput = document.getElementById('city-input');
 const weatherInfo = document.getElementById('weather-info');
@@ -51,18 +30,6 @@ async function getWeather() {
     weatherInfo.classList.add('hidden');
     errorMessage.classList.add('hidden');
 
-    // If no API key is provided, try using mock data first
-    if (!API_KEY) {
-        if (MOCK_DATA[city]) {
-            displayWeather(MOCK_DATA[city]);
-            return;
-        } else {
-            showError('No API key provided. Mock data available for: London, Tokyo, New York.');
-            return;
-        }
-    }
-
-    // Real API Call if API_KEY exists
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
         const response = await fetch(url);
